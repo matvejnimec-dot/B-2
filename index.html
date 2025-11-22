@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>B-2 Spirit — Статичний сайт</title>
+  <meta name="description" content="Сайт про стратегічний бомбардувальник Northrop B-2 Spirit — фото, технічні характеристики, історія." />
+  <style>
+    :root{
+      --bg:#0a0f16; --card:#0f1724; --muted:#9aa6b2; --accent:#1fb6ff; --text:#eef6fb;
+      --glass: rgba(255,255,255,0.03);
+    }
+    [data-theme="light"]{
+      --bg:#f6f8fb; --card:#fff; --muted:#475569; --accent:#0066cc; --text:#071329; --glass: rgba(0,0,0,0.04);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:linear-gradient(180deg,var(--bg),#03121a 80%);color:var(--text);padding:20px}
+    .container{max-width:1100px;margin:0 auto}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:60px;height:60px;border-radius:8px;background:#111;display:grid;place-items:center;font-weight:800;color:var(--accent);box-shadow:0 8px 24px rgba(0,0,0,0.5)}
+    nav{display:flex;gap:12px}
+    nav a{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
+    nav a:hover{background:var(--glass);color:var(--text)}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:16px;align-items:stretch;margin-bottom:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:14px;border:1px solid var(--glass)}
+    .hero .title{font-size:24px;font-weight:800;margin:0 0 8px}
+    .muted{color:var(--muted)}
+    .specs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
+    .spec{background:rgba(255,255,255,0.02);padding:10px;border-radius:8px}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+    .carousel{position:relative;overflow:hidden;border-radius:10px;margin-top:12px}
+    .slides{display:flex;transition:transform .45s ease}
+    .slide{min-width:100%;padding:16px;display:flex;gap:12px;align-items:center}
+    .slide img{width:45%;height:220px;object-fit:cover;border-radius:10px}
+    .slide .desc{flex:1}
+    .carousel .nav{position:absolute;top:50%;left:10px;right:10px;display:flex;justify-content:space-between;transform:translateY(-50%)}
+    .btn{background:var(--accent);border:0;color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer}
+    .thumbs{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+    .thumb{width:86px;height:54px;object-fit:cover;border-radius:6px;cursor:pointer;opacity:.85;border:2px solid transparent}
+    .thumb.active{border-color:var(--accent);opacity:1}
+    .grid-2{display:grid;grid-template-columns:1fr 320px;gap:16px;margin-top:16px}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px;text-align:left;border-bottom:1px dashed rgba(255,255,255,0.03)}
+    footer{margin-top:22px;text-align:center;color:var(--muted);font-size:13px}
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}}
+    @media (max-width:640px){.gallery{grid-template-columns:repeat(2,1fr)} .slide img{display:none}}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">B-2</div>
+        <div>
+          <div style="font-weight:800">B-2 Spirit</div>
+          <div class="muted" style="font-size:13px">Stealth Bomber — демо сайт</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#about">Історія</a>
+        <a href="#gallery">Фото</a>
+        <a href="#tech">Техніка</a>
+        <a href="#media">Медіа</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="card">
+        <h1 class="title">Northrop B-2 Spirit</h1>
+        <p class="muted">Американський стратегічний важкий бомбардувальник з технологією малопомітності (stealth).</p>
+
+        <div class="specs" aria-hidden>
+          <div class="spec"><strong>Екіпаж</strong><div class="muted">2 особи</div></div>
+          <div class="spec"><strong>Розмах крила</strong><div class="muted">52 м (приблизно)</div></div>
+          <div class="spec"><strong>Макс. швидкість</strong><div class="muted">прибл. надзвукова (субзвукова в оперативних режимах)</div></div>
+          <div class="spec"><strong>Роль</strong><div class="muted">Стратегічний бомбардувальник</div></div>
+        </div>
+
+        <p style="margin-top:12px" class="muted small">
+          Джерела фото та факти: офіційні сторінки ВПС США та Northrop Grumman (рекомендовано використовувати зображення з відкритих галерей). 
+        </p>
+      </div>
+
+      <aside class="card">
+        <div style="font-weight:800">Візуальна добірка</div>
+
+        <!-- SIMPLE GALLERY (replace IMG_URL_X with реальні посилання) -->
+        <div id="gallery" class="gallery" aria-live="polite">
+          <img src="https://media.defense.gov/2003/Sep/22/2000597310/2000/2000/0/030922-F-0000J-888.JPG" alt="B-2 Spirit фото 1" loading="lazy">
+          <img src="https://media.defense.gov/2003/Feb/10/2000030264/2000/2000/0/990406-F-4406B-502.JPG" alt="B-2 Spirit фото 2" loading="lazy">
+          <img src="https://media.defense.gov/2003/Feb/10/2000030292/2000/2000/0/010323-F-0966E-003.JPG" alt="B-2 Spirit фото 3" loading="lazy">
+        </div>
+
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <button class="btn" onclick="openLightbox(0)">Переглянути галерею</button>
+          <button class="btn" style="background:#3b82f6" onclick="downloadPlaceholder()">Завантажити фото (демо)</button>
+        </div>
+      </aside>
+    </section>
+
+    <!-- CAROUSEL -->
+    <section class="card" style="margin-top:12px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="font-weight:800">Карусель — обрані фото та підписи</div>
+        <div class="muted small">Навігація: стрілки або малі фото</div>
+      </div>
+
+      <div class="carousel" id="carousel" aria-roledescription="carousel" style="margin-top:12px">
+        <div class="slides" id="slides">
+          <!-- slides will be injected by JS -->
+        </div>
+        <div class="nav">
+          <button id="prev" class="btn" aria-label="Попереднє">‹</button>
+          <button id="next" class="btn" aria-label="Наступне">›</button>
+        </div>
+
+        <div class="thumbs" id="thumbs" aria-hidden="true" style="margin-top:12px"></div>
+      </div>
+    </section>
+
+    <div class="grid-2">
+      <div class="card" id="tech">
+        <h3 style="margin-top:0">Технічні деталі</h3>
+        <table>
+          <tbody>
+            <tr><th>Виробник</th><td>Northrop / Northrop Grumman</td></tr>
+            <tr><th>Початок виробництва</th><td>1989–2000</td></tr>
+            <tr><th>Кількість одиниць</th><td>21 (серійно)</td></tr>
+            <tr><th>Статус</th><td>В експлуатації (USAF)</td></tr>
+          </tbody>
+        </table>
+
+        <p class="muted small" style="margin-top:10px">Примітка: точні технічні характеристики та деталі озброєння варто брати з офіційних факт-шитів або публічних баз даних. </p>
+      </div>
+
+      <aside class="card" id="media">
+        <h3 style="margin-top:0">Медіа / Посилання</h3>
+        <ul class="muted" style="padding-left:18px;margin:8px 0 0 0">
+          <li><a href="https://www.af.mil/About-Us/Fact-Sheets/Display/Article/104482/b-2-spirit/" target="_blank" rel="noopener">FAct sheet — US Air Force</a></li>
+          <li><a href="https://www.northropgrumman.com" target="_blank" rel="noopener">Northrop Grumman — B-2</a></li>
+          <li><a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons — фото (з перевіркою ліцензій)</a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <footer>
+      © <span id="year"></span> — Демонстраційний сайт B-2 Spirit. Зображення слід використовувати згідно з умовами ліцензій їх джерел. 
+    </footer>
+  </div>
+
+  <script>
+    // --------------------------
+    // Дані для каруселі (замініть IMG_URL_X на реальні посилання)
+    // --------------------------
+    const slidesData = [
+      { img: 'IMG_URL_1', title: 'B-2 Spirit в польоті', desc: 'Класичний профіль літаючого крила.' },
+      { img: 'IMG_URL_2', title: 'Заправка в повітрі', desc: 'Операції дозаправки — поширена практика.' },
+      { img: 'IMG_URL_3', title: 'Кабіна та підготовка', desc: 'Екіпаж та бортові системи.' }
+    ];
+
+    // Для демонстрації підставні SVG-зображення якщо не замінено
+    const placeholderSVG = (label, w=800, h=480) => {
+      return 'data:image/svg+xml;utf8,' + encodeURIComponent(
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}"><rect width="100%" height="100%" fill="#0b1220"/><text x="50%" y="50%" fill="#7da7c6" font-family="Arial" font-size="20" text-anchor="middle" dominant-baseline="middle">${label}</text></svg>`
+      );
+    };
+
+    // Replace placeholders with demo SVGs if not set
+    slidesData.forEach((s, i)=>{ if(s.img.includes('IMG_URL')) s.img = placeholderSVG('Заміни IMG_URL_'+(i+1)); });
+
+    // Carousel render
+    const slidesEl = document.getElementById('slides');
+    const thumbsEl = document.getElementById('thumbs');
+    slidesData.forEach((s, i)=>{
+      const slide = document.createElement('div');
+      slide.className = 'slide';
+      slide.innerHTML = `
+        <img src="${s.img}" alt="${s.title}">
+        <div class="desc">
+          <h3 style="margin:0 0 6px">${s.title}</h3>
+          <p class="muted" style="margin:0">${s.desc}</p>
+        </div>
+      `;
+      slidesEl.appendChild(slide);
+
+      const t = document.createElement('img');
+      t.className = 'thumb';
+      t.src = s.img;
+      t.alt = s.title;
+      t.addEventListener('click', ()=> gotoSlide(i));
+      thumbsEl.appendChild(t);
+    });
+
+    let cur = 0;
+    function update(){
+      slidesEl.style.transform = `translateX(-${cur*100}%)`;
+      const thumbs = document.querySelectorAll('.thumb');
+      thumbs.forEach((t, i)=> t.classList.toggle('active', i===cur));
+    }
+    function gotoSlide(i){ cur = i; update(); resetAuto(); }
+    document.getElementById('prev').addEventListener('click', ()=>{ cur = (cur - 1 + slidesData.length) % slidesData.length; update(); resetAuto(); });
+    document.getElementById('next').addEventListener('click', ()=>{ cur = (cur + 1) % slidesData.length; update(); resetAuto(); });
+
+    // auto-advance
+    let timer = setInterval(()=>{ cur = (cur + 1) % slidesData.length; update(); }, 5000);
+    function resetAuto(){ clearInterval(timer); timer = setInterval(()=>{ cur = (cur + 1) % slidesData.length; update(); }, 5000); }
+
+    // Lightbox: просте спливаюче вікно перегляду
+    function openLightbox(startIndex=0){
+      const overlay = document.createElement('div');
+      overlay.style.position='fixed';overlay.style.top=0;overlay.style.left=0;overlay.style.right=0;overlay.style.bottom=0;
+      overlay.style.background='rgba(2,6,23,0.85)';overlay.style.display='flex';overlay.style.alignItems='center';overlay.style.justifyContent='center';
+      overlay.style.zIndex=9999;
+      let idx = startIndex;
+      const img = document.createElement('img'); img.src = slidesData[idx].img; img.style.maxWidth='90%'; img.style.maxHeight='90%'; img.style.borderRadius='8px';
+      overlay.appendChild(img);
+      overlay.addEventListener('click', ()=> document.body.removeChild(overlay));
+      document.body.appendChild(overlay);
+    }
+
+    // fallback download (демо)
+    function downloadPlaceholder(){
+      alert('У демо ця кнопка не завантажує реальних фото. Замініть IMG_URL у коді на посилання на зображення і реалізуйте пряме завантаження.');
+    }
+
+    // small utilities
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // keyboard nav for carousel
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'ArrowLeft') document.getElementById('prev').click();
+      if(e.key === 'ArrowRight') document.getElementById('next').click();
+    });
+
+    // Accessibility: if gallery images are real, add click to open lightbox
+    document.querySelectorAll('#gallery img').forEach((img, idx)=>{
+      img.addEventListener('click', ()=> openLightbox(idx));
+      // If IMG_URL placeholders not replaced, show demo hint
+      if(img.src.includes('IMG_URL')) img.style.filter = 'grayscale(40%)';
+    });
+  </script>
+</body>
+</html>
